@@ -10,3 +10,7 @@ We embarked on a project to investigate the problem of Land Subsidence all over 
 ### Implementing Machine Learning to analyse data
 
 ## How it works
+
+## Acknowledgements
+
+[HERE Maps](https://www.here.com/) for the [HERE REST APIs](https://developer.here.com/develop/rest-apis)
