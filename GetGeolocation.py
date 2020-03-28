@@ -1,6 +1,7 @@
 import pandas as pd
 import requests
 
+# Set input and output file paths
 inputFile = "data/mexico/Mexico2015-2016APR.txt"
 outputFile = 'data/mexico-geocoded-output/output.csv'
 data = pd.read_csv(inputFile, sep='\t')
@@ -18,13 +19,13 @@ for index, row in locations.iterrows():
     lat = str(row['Latitude'])
     long = str(row['Longitude'])
 
+    # Using HERE Maps API for Reverse Geocoding
     response = requests.get('https://revgeocode.search.hereapi.com/v1/revgeocode?at=' + lat + '%2C' + long +
                             '&lang=en-US'+'&apiKey=' + apiKey)
 
     location = response.json()
 
     city = (location['items'][0]['address']['city'])
-    print(city)
     df = df.append(row)
 
 df.to_csv(outputFile)
