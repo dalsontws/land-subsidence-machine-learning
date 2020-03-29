@@ -20,4 +20,4 @@ for filepath in glob.iglob('D:/mexico-monthly-sar-data/*.txt'):
                                      index=output.columns), ignore_index=True)
 
 output.head()
-output.to_csv("mexico-city-iztacalco-subsidence-2017")
+output.to_csv("mexico-city-iztacalco-subsidence-2017.csv")
