@@ -1,9 +1,5 @@
 import pandas as pd
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 import glob
-import pandas as pd
 
 output = pd.DataFrame(columns=['Month', 'Sum', 'Count', 'Displacement'])
 
@@ -19,9 +15,8 @@ for filepath in glob.iglob('D:/mexico-monthly-sar-data/*.txt'):
     df = df[df.displacement != 0]
     df = df[df.coh > 0.3]
 
-    
-    output = output.append(pd.Series([filepath, df['displacement'].sum(), 
-                                      df['displacement'].count(),(df['displacement'].sum()/df['displacement'].count())], 
+    output = output.append(pd.Series([filepath, df['displacement'].sum(),
+                                      df['displacement'].count(), (df['displacement'].sum()/df['displacement'].count())],
                                      index=output.columns), ignore_index=True)
 
 output.head()
